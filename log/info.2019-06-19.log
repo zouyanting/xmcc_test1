@@ -1,0 +1,16 @@
+Starting WeiSellApplication on DESKTOP-DA5V2IP with PID 536 (E:\idea_project\wei_sell\target\classes started by 23783 in E:\idea_project\wei_sell)
+No active profile set, falling back to default profiles: default
+Tomcat initialized with port(s): 8888 (http)
+Initializing ProtocolHandler ["http-nio-8888"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 1450 ms
+Initializing ExecutorService 'applicationTaskExecutor'
+Starting ProtocolHandler ["http-nio-8888"]
+Tomcat started on port(s): 8888 (http) with context path ''
+Started WeiSellApplication in 2.568 seconds (JVM running for 3.95)
+Initializing Spring DispatcherServlet 'dispatcherServlet'
+Initializing Servlet 'dispatcherServlet'
+Completed initialization in 6 ms
+info->hello logback info sl4j
