@@ -13,7 +13,7 @@ public class Test {
     @RequestMapping("/hello")
     @GetMapping
     public String test(){
-        log.info("info->{}","hello logback info sl4j");
+        //log.info("info->{}","hello logback info sl4j");
         return "hello Spring-boot";
     }
 }
