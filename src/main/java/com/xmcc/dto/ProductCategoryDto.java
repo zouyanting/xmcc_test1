@@ -1,12 +1,12 @@
 package com.xmcc.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.xmcc.entity.ProductCategory;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.springframework.beans.BeanUtils;
 
+import org.springframework.beans.BeanUtils;
 import java.io.Serializable;
 import java.util.List;
 
@@ -34,6 +34,5 @@ public class ProductCategoryDto implements Serializable {
         return productCategoryDto;
     }
 
-    public void setProductInfodtoList(List<ProductInfoDto> collect) {
-    }
+
 }

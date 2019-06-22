@@ -34,7 +34,7 @@ public class ProductInfoServiceImpl implements ProductInfoService {
         List<ProductInfo> productInfoList = productInfoRepository.findByProductStatusAndCategoryTypeIn(ResultEnums.PRODUCT_UP.getCode(), categoryTypeList);
         //多线程遍历 取出每个商品类目编号对应的 商品列表 设置进入类目中
         List<ProductCategoryDto> finalResultList = categorydtoList.parallelStream().map(categorydto -> {
-            categorydto.setProductInfodtoList(productInfoList.stream().
+            categorydto.setProductInfoDtoList(productInfoList.stream().
                     filter(productInfo -> productInfo.getCategoryType() == categorydto.getCategoryType()).map(productInfo ->
                     ProductInfoDto.build(productInfo)).collect(Collectors.toList()));
             return categorydto;

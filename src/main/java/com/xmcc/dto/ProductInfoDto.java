@@ -1,10 +1,11 @@
 package com.xmcc.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.xmcc.entity.ProductInfo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.codehaus.jackson.annotate.JsonProperty;
+
 import org.springframework.beans.BeanUtils;
 
 import java.io.Serializable;
