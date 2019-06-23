@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class ProductInfoServiceImpl implements ProductInfoService {
+public class ProductInfoServiceImpl implements ProductInfoService{
     @Autowired
     private ProductCategoryService productCategoryService;
     @Autowired
@@ -40,5 +40,16 @@ public class ProductInfoServiceImpl implements ProductInfoService {
             return categorydto;
         }).collect(Collectors.toList());
         return ResultResponse.success(finalResultList);
+    }
+
+    @Override
+    public ResultResponse<ProductInfo> queryById(String productId) {
+
+        return null;
+    }
+
+    @Override
+    public void updateProduct(ProductInfo productInfo) {
+
     }
 }

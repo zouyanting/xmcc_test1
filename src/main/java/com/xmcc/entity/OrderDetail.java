@@ -1,5 +1,6 @@
 package com.xmcc.entity;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -8,6 +9,7 @@ import java.io.Serializable;
 import java.util.Date;
 @Entity
 @Data
+@Builder
 public class OrderDetail implements Serializable {
     @Id
     private String detailId;
