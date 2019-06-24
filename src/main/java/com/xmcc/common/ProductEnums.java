@@ -4,6 +4,7 @@ import lombok.Getter;
 
 @Getter
 public enum ProductEnums {
+    PRODUCT_DOWN(0,"商品下架"),
     PRODUCT_NOT_ENOUGH(1,"商品库存不足");
 
     private int code;

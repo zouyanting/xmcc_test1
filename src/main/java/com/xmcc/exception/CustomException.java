@@ -1,4 +1,4 @@
-package com.xmcc.util;
+package com.xmcc.exception;
 
 import com.xmcc.common.ResultEnums;
 import lombok.Getter;

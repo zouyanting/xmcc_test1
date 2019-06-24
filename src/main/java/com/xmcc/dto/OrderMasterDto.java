@@ -1,6 +1,6 @@
 package com.xmcc.dto;
 
-import io.swagger.annotations.ApiKeyAuthDefinition;
+import com.xmcc.entity.OrderDetail;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -36,5 +36,5 @@ public class OrderMasterDto implements Serializable {
     @NotEmpty(message = "订单项不能为空")
     @Valid //表示需要嵌套验证
     @ApiModelProperty(value = "订单项集合",dataType = "List")
-    private List<OrderMasterDto> items;
+    private List<OrderDetailDto> items;
 }

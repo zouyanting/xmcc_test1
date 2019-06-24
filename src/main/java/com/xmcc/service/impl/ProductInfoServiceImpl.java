@@ -1,5 +1,6 @@
 package com.xmcc.service.impl;
 
+import com.xmcc.common.ProductEnums;
 import com.xmcc.common.ResultEnums;
 import com.xmcc.common.ResultResponse;
 import com.xmcc.dto.ProductCategoryDto;
@@ -8,11 +9,14 @@ import com.xmcc.entity.ProductInfo;
 import com.xmcc.repository.ProductInfoRepository;
 import com.xmcc.service.ProductCategoryService;
 import com.xmcc.service.ProductInfoService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -44,12 +48,28 @@ public class ProductInfoServiceImpl implements ProductInfoService{
 
     @Override
     public ResultResponse<ProductInfo> queryById(String productId) {
-
-        return null;
+        //使用common-lang3 jar的类
+        //判断productId是否为空
+        if(StringUtils.isBlank(productId)){
+            return ResultResponse.fail(ResultEnums.PRODUCT_DOWN.getMsg()+":"+productId);
+        }
+        //如果productId不为空则根据商品id进行查找
+        Optional<ProductInfo> byId=productInfoRepository.findById(productId);
+        //如果buId不存在则返回NOT_EXITS
+        if(!byId.isPresent()){
+            return ResultResponse.fail(productId+":"+ResultEnums.NOT_EXITS.getMsg());
+        }
+        //如果byId存在，则获取商品信息
+        ProductInfo productInfo=byId.get();
+        //判断商品是否下架
+        if(productInfo.getProductStatus()== ResultEnums.PRODUCT_DOWN.getCode()){
+            return ResultResponse.fail(ResultEnums.PRODUCT_DOWN.getMsg());
+        }
+        return ResultResponse.success(productInfo);
     }
 
     @Override
     public void updateProduct(ProductInfo productInfo) {
-
+        productInfoRepository.save(productInfo);
     }
 }

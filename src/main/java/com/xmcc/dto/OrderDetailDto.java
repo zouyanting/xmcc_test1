@@ -9,10 +9,11 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.util.Date;
+
 @Data
 //swagger 参数的描述信息
 @ApiModel("订单详情类")
+
 public class OrderDetailDto implements Serializable {
 /*
     private String detailId;//
@@ -22,7 +23,7 @@ public class OrderDetailDto implements Serializable {
     @NotBlank(message = "商品id不能为空")
     //swagger 参数的描述信息
     @ApiModelProperty(value = "商品id",dataType = "String")
-    private Integer productId;
+    private String productId;
 
     /*
     @NotBlank(message = "商品名称不能为空")
