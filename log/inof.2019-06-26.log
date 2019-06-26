@@ -457,3 +457,4 @@ org.hibernate.InstantiationException: No default constructor for entity:  : com.
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:745)
+slow sql 11 millis. select ordermaste0_.order_id as order_id1_1_, ordermaste0_.buyer_address as buyer_ad2_1_, ordermaste0_.buyer_name as buyer_na3_1_, ordermaste0_.buyer_openid as buyer_op4_1_, ordermaste0_.buyer_phone as buyer_ph5_1_, ordermaste0_.create_time as create_t6_1_, ordermaste0_.order_amount as order_am7_1_, ordermaste0_.order_status as order_st8_1_, ordermaste0_.pay_status as pay_stat9_1_, ordermaste0_.update_time as update_10_1_ from order_master ordermaste0_ where (ordermaste0_.buyer_openid in (?)) and (ordermaste0_.order_id like ? escape ?)["song","%189c04e602324f5f9a1052272a527955%","\\"]

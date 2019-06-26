@@ -1,9 +1,11 @@
 package com.xmcc.dto;
 
 
+import com.xmcc.entity.OrderDetail;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import org.springframework.beans.BeanUtils;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -39,5 +41,11 @@ public class OrderDetailDto implements Serializable {
     @Min(value = 1,message ="商品数量不能少于一件" )
     @ApiModelProperty(value = "商品数量",dataType = "int")
     private Integer productQuantity;
+
+    public static OrderDetailDto build(OrderDetail orderDetail){
+        OrderDetailDto orderDetailDto = new OrderDetailDto();
+        BeanUtils.copyProperties(orderDetail,orderDetailDto);
+        return orderDetailDto;
+    }
 
 }

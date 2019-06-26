@@ -9,4 +9,10 @@ import java.util.List;
 public interface OrderMasterRepository extends JpaRepository<OrderMaster,String> {
     @Query(value = "SELECT * FROM order_master WHERE buyer_openid=?1",nativeQuery = true)
     List <OrderMaster> findByBuyerOpenidIn (String openId);
+
+
+    /**
+     * 根据orderId和opendid查询
+     */
+    OrderMaster findByBuyerOpenidInAndOrderIdContains(String opendId,String orderId);
 }

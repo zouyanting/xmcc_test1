@@ -59,4 +59,14 @@ public class OrderMasterController {
         return byOpenIdAndOrderId;
     }
 
+    /**
+     * 取消订单
+     */
+    @ApiOperation(value = "取消详情（*）",httpMethod = "POST",response = ResultResponse.class)
+    @RequestMapping("/cancel")
+    public ResultResponse cansel(DetailListDto detailListDto){
+        ResultResponse resultResponse = orderMasterService.CancelDetail(detailListDto.getOpenid(), detailListDto.getOrderId());
+        return resultResponse;
+    }
+
 }

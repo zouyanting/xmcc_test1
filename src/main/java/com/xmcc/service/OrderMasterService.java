@@ -10,4 +10,7 @@ public interface OrderMasterService {
 
     //*根据买家id查询
     ResultResponse findByOpenIdAndOrderId(String opendId,String orderId);
+
+    //*根据orderId查询数据
+    ResultResponse CancelDetail(String opendId,String orderId);
 }

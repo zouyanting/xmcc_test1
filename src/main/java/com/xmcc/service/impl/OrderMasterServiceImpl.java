@@ -12,26 +12,26 @@ import com.xmcc.entity.OrderMaster;
 import com.xmcc.entity.ProductInfo;
 import com.xmcc.repository.OrderDetailRepository;
 import com.xmcc.repository.OrderMasterRepository;
+import com.xmcc.repository.ProductInfoRepository;
 import com.xmcc.service.OrderDetailService;
 import com.xmcc.service.OrderMasterService;
 import com.xmcc.service.ProductInfoService;
 import com.xmcc.exception.CustomException;
 import com.xmcc.util.BigDecimalUtil;
 import com.xmcc.util.IDUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
+
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
+
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 @Service
 public class OrderMasterServiceImpl implements OrderMasterService{
@@ -40,6 +40,8 @@ public class OrderMasterServiceImpl implements OrderMasterService{
     private ProductInfoService productInfoService;
     @Autowired
     private OrderDetailService orderDetailService;
+    @Autowired
+    private ProductInfoRepository productInfoRepository;
     @Autowired
     private OrderMasterRepository orderMasterRepository;
     @Autowired
@@ -115,17 +117,13 @@ public class OrderMasterServiceImpl implements OrderMasterService{
         //1:根据buyerOpenid查询
         List<OrderMaster> byBuyerOpenidIn = orderMasterRepository.findByBuyerOpenidIn(opendId);
         //2.1:byBuyerOpenidIn转换为OrderMasterDto,并将其收集起来
-
         List<OrderMasterResultDto>  orderMasterDtoList= byBuyerOpenidIn.stream().map(
                 orderMaster -> OrderMasterResultDto.build(orderMaster)).collect(Collectors.toList());
         //1.1:判断是否为空
-
         if(CollectionUtils.isEmpty(byBuyerOpenidIn)){
             return ResultResponse.fail(OrderEnums.OPENID_ERROR.getMsg());
         }
-        //2:获取opndid的集合
-//        List<String> openIdList
-//                = collect.stream().map(orderMasterDto -> orderMasterDto.getOpenid()).collect(Collectors.toList());
+
         //3:根据orderId查询订单项
         List<OrderDetail> orderDetailList = orderDetailRepository.findByOrOrderIdIn(orderId);
 
@@ -144,7 +142,51 @@ public class OrderMasterServiceImpl implements OrderMasterService{
                 })
                 .collect(Collectors.toList());
         return ResultResponse.success(orderMasterResultDtoBig);
+    }
 
+    /**
+     * 取消订单
+     * @param opendId
+     * @param orderId
+     * @return
+     */
+    @Override
+    @Transactional
+    public ResultResponse CancelDetail(String opendId, String orderId) {
+        //1:根据openid和orderId获得订单
+        OrderMaster containsOrder = orderMasterRepository.findByBuyerOpenidInAndOrderIdContains(opendId, orderId);
+        //2:查询订单是否存在
+       if(containsOrder.getOrderStatus()==OrderEnums.ORDER_NOT_EXITS.getCode()){
+           throw  new CustomException(OrderEnums.ORDER_NOT_EXITS.getMsg());
+       }
+       //3:判断订单是否完成
+        if(containsOrder.getOrderStatus()==OrderEnums.FINSH.getCode()){
+            throw  new CustomException(OrderEnums.FINSH.getMsg());
+        }
+       //4:如果订单存在，则修改订单状态和支付状态
+        OrderMaster master
+                = OrderMaster.builder().buyerAddress(containsOrder.getBuyerAddress())
+                .buyerName(containsOrder.getBuyerName())
+                .buyerPhone(containsOrder.getBuyerPhone())
+                .buyerOpenid(opendId)
+                .orderAmount(containsOrder.getOrderAmount())
+                .orderId(orderId)
+                .updateTime(new Date())
+                .createTime(containsOrder.getCreateTime())
+                .orderStatus(OrderEnums.CANCEL.getCode())
+                .payStatus(PayEnums.STATUS_ERROR.getCode())
+                .build();
+        OrderMaster save = orderMasterRepository.save(master);
+        // 4：修改库存
+        //4.1：根据orderId获得productId和productQuantities
+        OrderDetail byOrderIdIn = orderDetailRepository.findByOrderIdIn(orderId);
+        ProductInfo productInfoByProductId = productInfoRepository.findProductInfoByProductId(byOrderIdIn.getProductId());
+        //4.2：在productInfo中根据productId添加productQuantities
+        productInfoByProductId.setProductStock(productInfoByProductId.getProductStock()+byOrderIdIn.getProductQuantity());
+        productInfoByProductId.setUpdateTime(new Date());
+        productInfoRepository.save(productInfoByProductId);
+        //5;再次查询订单
+        return ResultResponse.success();
     }
 
 
