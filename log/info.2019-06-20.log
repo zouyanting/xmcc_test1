@@ -1,0 +1,120 @@
+Starting WeiSellApplication on DESKTOP-DA5V2IP with PID 8360 (E:\idea_project\wei_sell\target\classes started by 23783 in E:\idea_project\wei_sell)
+No active profile set, falling back to default profiles: default
+Bootstrapping Spring Data repositories in DEFAULT mode.
+Finished Spring Data repository scanning in 96ms. Found 0 repository interfaces.
+Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8fdb9b79] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Tomcat initialized with port(s): 8888 (http)
+Initializing ProtocolHandler ["http-nio-8888"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 5801 ms
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+Stopping service [Tomcat]
+
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+Starting WeiSellApplication on DESKTOP-DA5V2IP with PID 12604 (E:\idea_project\wei_sell\target\classes started by 23783 in E:\idea_project\wei_sell)
+No active profile set, falling back to default profiles: default
+Bootstrapping Spring Data repositories in DEFAULT mode.
+Finished Spring Data repository scanning in 72ms. Found 0 repository interfaces.
+Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3c6895f8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Tomcat initialized with port(s): 8888 (http)
+Initializing ProtocolHandler ["http-nio-8888"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 4235 ms
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+Stopping service [Tomcat]
+
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+Starting WeiSellApplication on DESKTOP-DA5V2IP with PID 17036 (E:\idea_project\wei_sell\target\classes started by 23783 in E:\idea_project\wei_sell)
+No active profile set, falling back to default profiles: default
+Bootstrapping Spring Data repositories in DEFAULT mode.
+Finished Spring Data repository scanning in 169ms. Found 0 repository interfaces.
+Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8749f09c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Tomcat initialized with port(s): 8888 (http)
+Initializing ProtocolHandler ["http-nio-8888"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 9725 ms
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+Stopping service [Tomcat]
+
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+Starting WeiSellApplication on DESKTOP-DA5V2IP with PID 12472 (E:\idea_project\wei_sell\target\classes started by 23783 in E:\idea_project\wei_sell)
+No active profile set, falling back to default profiles: default
+Bootstrapping Spring Data repositories in DEFAULT mode.
+Finished Spring Data repository scanning in 107ms. Found 0 repository interfaces.
+Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c0d189aa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Tomcat initialized with port(s): 8888 (http)
+Initializing ProtocolHandler ["http-nio-8888"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 8295 ms
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+Stopping service [Tomcat]
+
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+Starting WeiSellApplication on DESKTOP-DA5V2IP with PID 6332 (E:\idea_project\wei_sell\target\classes started by 23783 in E:\idea_project\wei_sell)
+No active profile set, falling back to default profiles: default
+Bootstrapping Spring Data repositories in DEFAULT mode.
+Finished Spring Data repository scanning in 9ms. Found 0 repository interfaces.
+Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8e85439c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Tomcat initialized with port(s): 8888 (http)
+Initializing ProtocolHandler ["http-nio-8888"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 1034 ms
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+Stopping service [Tomcat]
+
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+Starting ProductCategoryRepositoryTest on DESKTOP-DA5V2IP with PID 1604 (started by 23783 in E:\idea_project\wei_sell)
+No active profile set, falling back to default profiles: default
+Bootstrapping Spring Data repositories in DEFAULT mode.
+Finished Spring Data repository scanning in 161ms. Found 1 repository interfaces.
+Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$65b65fbd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+{dataSource-1} inited
+HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+HHH000412: Hibernate Core {5.3.10.Final}
+HHH000206: hibernate.properties not found
+HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+Initialized JPA EntityManagerFactory for persistence unit 'default'
+Initializing ExecutorService 'applicationTaskExecutor'
+spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+Started ProductCategoryRepositoryTest in 10.625 seconds (JVM running for 12.249)
+Shutting down ExecutorService 'applicationTaskExecutor'
+Closing JPA EntityManagerFactory for persistence unit 'default'
+{dataSource-1} closed
+Starting ProductCategoryRepositoryTest on DESKTOP-DA5V2IP with PID 16276 (started by 23783 in E:\idea_project\wei_sell)
+No active profile set, falling back to default profiles: default
+Bootstrapping Spring Data repositories in DEFAULT mode.
+Finished Spring Data repository scanning in 48ms. Found 1 repository interfaces.
+Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$23c314e2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+{dataSource-1} inited
+HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+HHH000412: Hibernate Core {5.3.10.Final}
+HHH000206: hibernate.properties not found
+HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+Initialized JPA EntityManagerFactory for persistence unit 'default'
+Initializing ExecutorService 'applicationTaskExecutor'
+spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+Started ProductCategoryRepositoryTest in 5.764 seconds (JVM running for 6.77)
+Shutting down ExecutorService 'applicationTaskExecutor'
+Closing JPA EntityManagerFactory for persistence unit 'default'
+{dataSource-1} closed

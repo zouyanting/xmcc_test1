@@ -1,0 +1,114 @@
+Starting ProductCategoryRepositoryTest on DESKTOP-DA5V2IP with PID 16868 (started by 23783 in E:\idea_project\wei_sell)
+No active profile set, falling back to default profiles: default
+Bootstrapping Spring Data repositories in DEFAULT mode.
+Finished Spring Data repository scanning in 121ms. Found 1 repository interfaces.
+Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ec5d5046] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+{dataSource-1} inited
+HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+HHH000412: Hibernate Core {5.3.10.Final}
+HHH000206: hibernate.properties not found
+HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+Initialized JPA EntityManagerFactory for persistence unit 'default'
+Initializing ExecutorService 'applicationTaskExecutor'
+spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+Started ProductCategoryRepositoryTest in 10.766 seconds (JVM running for 13.181)
+HHH000397: Using ASTQueryTranslatorFactory
+Shutting down ExecutorService 'applicationTaskExecutor'
+Closing JPA EntityManagerFactory for persistence unit 'default'
+{dataSource-1} closed
+Starting ProductCategoryRepositoryTest on DESKTOP-DA5V2IP with PID 2352 (started by 23783 in E:\idea_project\wei_sell)
+No active profile set, falling back to default profiles: default
+Bootstrapping Spring Data repositories in DEFAULT mode.
+Finished Spring Data repository scanning in 55ms. Found 1 repository interfaces.
+Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5971c64b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+{dataSource-1} inited
+HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+HHH000412: Hibernate Core {5.3.10.Final}
+HHH000206: hibernate.properties not found
+HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+Initialized JPA EntityManagerFactory for persistence unit 'default'
+Initializing ExecutorService 'applicationTaskExecutor'
+spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+Started ProductCategoryRepositoryTest in 6.11 seconds (JVM running for 7.039)
+Shutting down ExecutorService 'applicationTaskExecutor'
+Closing JPA EntityManagerFactory for persistence unit 'default'
+{dataSource-1} closed
+Starting ProductCategoryRepositoryTest on DESKTOP-DA5V2IP with PID 1832 (started by 23783 in E:\idea_project\wei_sell)
+No active profile set, falling back to default profiles: default
+Bootstrapping Spring Data repositories in DEFAULT mode.
+Finished Spring Data repository scanning in 133ms. Found 1 repository interfaces.
+Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5b0ae3a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+{dataSource-1} inited
+HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+HHH000412: Hibernate Core {5.3.10.Final}
+HHH000206: hibernate.properties not found
+HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+Initialized JPA EntityManagerFactory for persistence unit 'default'
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productInfoController': Unsatisfied dependency expressed through field 'productInfoService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productInfoServiceImpl': Unsatisfied dependency expressed through field 'productInfoRepository'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.xmcc.repository.ProductInfoRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+Closing JPA EntityManagerFactory for persistence unit 'default'
+{dataSource-1} closed
+
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+Starting ProductCategoryRepositoryTest on DESKTOP-DA5V2IP with PID 16188 (started by 23783 in E:\idea_project\wei_sell)
+No active profile set, falling back to default profiles: default
+Bootstrapping Spring Data repositories in DEFAULT mode.
+Finished Spring Data repository scanning in 57ms. Found 2 repository interfaces.
+Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9987d20e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+{dataSource-1} inited
+HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+HHH000412: Hibernate Core {5.3.10.Final}
+HHH000206: hibernate.properties not found
+HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+Initialized JPA EntityManagerFactory for persistence unit 'default'
+spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+Initializing ExecutorService 'applicationTaskExecutor'
+Context refreshed
+Found 1 custom documentation plugin(s)
+Scanning for api listing references
+Started ProductCategoryRepositoryTest in 7.712 seconds (JVM running for 8.658)
+Shutting down ExecutorService 'applicationTaskExecutor'
+Closing JPA EntityManagerFactory for persistence unit 'default'
+{dataSource-1} closed
+Starting WeiSellApplication on DESKTOP-DA5V2IP with PID 6532 (E:\idea_project\wei_sell\target\classes started by 23783 in E:\idea_project\wei_sell)
+No active profile set, falling back to default profiles: default
+Bootstrapping Spring Data repositories in DEFAULT mode.
+Finished Spring Data repository scanning in 43ms. Found 2 repository interfaces.
+Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d9df7757] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Tomcat initialized with port(s): 8888 (http)
+Initializing ProtocolHandler ["http-nio-8888"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 1478 ms
+{dataSource-1} inited
+HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+HHH000412: Hibernate Core {5.3.10.Final}
+HHH000206: hibernate.properties not found
+HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+Initialized JPA EntityManagerFactory for persistence unit 'default'
+spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+Initializing ExecutorService 'applicationTaskExecutor'
+Context refreshed
+Found 1 custom documentation plugin(s)
+Scanning for api listing references
+Starting ProtocolHandler ["http-nio-8888"]
+Tomcat started on port(s): 8888 (http) with context path '/sell'
+Started WeiSellApplication in 4.073 seconds (JVM running for 5.098)
