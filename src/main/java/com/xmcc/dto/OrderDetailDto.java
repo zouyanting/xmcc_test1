@@ -17,7 +17,7 @@ import java.io.Serializable;
 public class OrderDetailDto implements Serializable {
 /*
     private String detailId;//
-    private String orderId;//由工具类随机生成
+    private String orderId;//
 */
 
     @NotBlank(message = "商品id不能为空")

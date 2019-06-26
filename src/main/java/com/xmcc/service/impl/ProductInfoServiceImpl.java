@@ -27,7 +27,9 @@ public class ProductInfoServiceImpl implements ProductInfoService{
     private ProductInfoRepository productInfoRepository;
     @Override
     public ResultResponse queryList() {
+        //&获得商品分类
         ResultResponse<List<ProductCategoryDto>> categoryServiceResult = productCategoryService.findAll();
+        //&获取Data数据
         List<ProductCategoryDto> categorydtoList = categoryServiceResult.getData();
         if(CollectionUtils.isEmpty(categorydtoList)){
             return categoryServiceResult;//如果分类列表为空 直接返回了
@@ -55,7 +57,7 @@ public class ProductInfoServiceImpl implements ProductInfoService{
         }
         //如果productId不为空则根据商品id进行查找
         Optional<ProductInfo> byId=productInfoRepository.findById(productId);
-        //如果buId不存在则返回NOT_EXITS
+        //如果byId不存在则返回NOT_EXITS
         if(!byId.isPresent()){
             return ResultResponse.fail(productId+":"+ResultEnums.NOT_EXITS.getMsg());
         }

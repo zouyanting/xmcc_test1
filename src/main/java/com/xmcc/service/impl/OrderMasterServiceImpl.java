@@ -4,10 +4,13 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.xmcc.common.*;
 import com.xmcc.dto.OrderDetailDto;
+import com.xmcc.dto.OrderDetailResultDto;
 import com.xmcc.dto.OrderMasterDto;
+import com.xmcc.dto.OrderMasterResultDto;
 import com.xmcc.entity.OrderDetail;
 import com.xmcc.entity.OrderMaster;
 import com.xmcc.entity.ProductInfo;
+import com.xmcc.repository.OrderDetailRepository;
 import com.xmcc.repository.OrderMasterRepository;
 import com.xmcc.service.OrderDetailService;
 import com.xmcc.service.OrderMasterService;
@@ -15,15 +18,23 @@ import com.xmcc.service.ProductInfoService;
 import com.xmcc.exception.CustomException;
 import com.xmcc.util.BigDecimalUtil;
 import com.xmcc.util.IDUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 @Service
-public class OrderMasterServiceImpl implements OrderMasterService {
+public class OrderMasterServiceImpl implements OrderMasterService{
 
     @Autowired
     private ProductInfoService productInfoService;
@@ -31,7 +42,8 @@ public class OrderMasterServiceImpl implements OrderMasterService {
     private OrderDetailService orderDetailService;
     @Autowired
     private OrderMasterRepository orderMasterRepository;
-
+    @Autowired
+    private OrderDetailRepository orderDetailRepository;
     @Override
     public ResultResponse insertOrder(OrderMasterDto orderMasterDto) {
         /**
@@ -91,4 +103,49 @@ public class OrderMasterServiceImpl implements OrderMasterService {
         map.put("orderId",order_id);
         return ResultResponse.success(map);
     }
+
+
+    /**
+     * 根据买家Id查询信息
+     * @param opendId
+     * @return
+     */
+    @Override
+    public ResultResponse findByOpenIdAndOrderId(String opendId,String orderId) {
+        //1:根据buyerOpenid查询
+        List<OrderMaster> byBuyerOpenidIn = orderMasterRepository.findByBuyerOpenidIn(opendId);
+        //2.1:byBuyerOpenidIn转换为OrderMasterDto,并将其收集起来
+
+        List<OrderMasterResultDto>  orderMasterDtoList= byBuyerOpenidIn.stream().map(
+                orderMaster -> OrderMasterResultDto.build(orderMaster)).collect(Collectors.toList());
+        //1.1:判断是否为空
+
+        if(CollectionUtils.isEmpty(byBuyerOpenidIn)){
+            return ResultResponse.fail(OrderEnums.OPENID_ERROR.getMsg());
+        }
+        //2:获取opndid的集合
+//        List<String> openIdList
+//                = collect.stream().map(orderMasterDto -> orderMasterDto.getOpenid()).collect(Collectors.toList());
+        //3:根据orderId查询订单项
+        List<OrderDetail> orderDetailList = orderDetailRepository.findByOrOrderIdIn(orderId);
+
+        //4：对orderMasterDtoList集合进行遍历，取出订单项设置到对应的订单中
+            //将orderdtail设置在items中
+            //将orderDetail转换为dto
+        List<OrderMasterResultDto> orderMasterResultDtoBig = orderMasterDtoList.stream()
+                .map(orderMasterResultDto -> {
+                    orderMasterResultDto.setOrderDetailList(orderDetailList.stream()
+                            .map(orderDetail -> {
+                                OrderDetailResultDto build = OrderDetailResultDto.build(orderDetail);
+                                return build;
+                            })
+                            .collect(Collectors.toList()));
+                    return orderMasterResultDto;
+                })
+                .collect(Collectors.toList());
+        return ResultResponse.success(orderMasterResultDtoBig);
+
+    }
+
+
 }

@@ -14,5 +14,12 @@ public class OrderDetailServiceImpl extends BatchDaoImpl<OrderDetail> implements
     public void  batchInsert(List<OrderDetail> orderDetailList){
         super.bacthInsert(orderDetailList);
     }
-    
+
+    @Override
+    public List<OrderDetail> queryByOrderId(String orderId) {
+
+        return null;
+    }
+
+
 }

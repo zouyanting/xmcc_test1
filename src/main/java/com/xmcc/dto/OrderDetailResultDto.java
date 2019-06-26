@@ -1,25 +1,23 @@
-package com.xmcc.entity;
+package com.xmcc.dto;
 
+import com.xmcc.entity.OrderDetail;
+import com.xmcc.entity.OrderMaster;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.BeanUtils;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
-@Entity
+
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderDetail implements Serializable {
-    @Id
+public class OrderDetailResultDto {
+
     private String detailId;
     //订单id.
     private String orderId;
+
     /** 商品id. */
     private String productId;
     // 商品名称.
@@ -31,7 +29,13 @@ public class OrderDetail implements Serializable {
     //商品小图
     private String productIcon;
 
-    private Date createTime;
+    private String productImage;
 
-    private Date updateTime;
+    public static OrderDetailResultDto build(OrderDetail orderDetail){
+        OrderDetailResultDto orderDetailResultDto = new OrderDetailResultDto();
+        BeanUtils.copyProperties(orderDetail,orderDetailResultDto);
+        return orderDetailResultDto;
+    }
+
+
 }
